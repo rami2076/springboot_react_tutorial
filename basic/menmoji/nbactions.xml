@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>run</actionName>
+            <packagings>
+                <packaging>war</packaging>
+            </packagings>
+            <goals>
+                <goal>spring-boot:run</goal>
+            </goals>
+            <properties>
+                <Env.JAVA_HOME>C:\tool\java\openjdk-15.0.1_windows-x64_bin\jdk-15.0.1</Env.JAVA_HOME>
+            </properties>
+        </action>
+        <action>
+            <actionName>debug</actionName>
+            <packagings>
+                <packaging>war</packaging>
+            </packagings>
+            <goals>
+                <goal>spring-boot:run</goal>
+            </goals>
+            <properties>
+                <spring-boot.run.jvmArguments>-Xdebug -Xrunjdwp:transport=dt_socket,server=n,address=${jpda.address}</spring-boot.run.jvmArguments>
+                
+                
+                
+                <jpda.listen>true</jpda.listen>
+                <netbeans.deploy.debugmode>true</netbeans.deploy.debugmode>
+            </properties>
+        </action>
+        <action>
+            <actionName>profile</actionName>
+            <packagings>
+                <packaging>war</packaging>
+            </packagings>
+            <properties>
+                <exec.args>--enable-preview --enable-preview</exec.args>
+                <exec.executable>java</exec.executable>
+                <netbeans.deploy.profilemode>true</netbeans.deploy.profilemode>
+            </properties>
+        </action>
+        <action>
+            <actionName>rebuild</actionName>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>clean</goal>
+                <goal>install</goal>
+                
+            </goals>
+        </action>
+    </actions>
